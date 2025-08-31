@@ -4,11 +4,11 @@ FROM openjdk:11-jdk-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the built WAR file into the container
-COPY build/libs/spring-hello-world-*.war app.war
+# Copy the built JAR file into the container
+COPY build/libs/spring-hello-world-*.jar app.jar
 
 # Expose the port the app runs on
 EXPOSE 8080
 
-# Run the WAR file
-ENTRYPOINT ["java", "-jar", "app.war"]
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "app.jar"]
